@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-body: #040924;
+    --bg-btn: #02799D;
+    --bg-input: #DCE2E9;
+    --color-btn: #ffffff;
+    --box-color: #ffffff;
+    --bg-error: #F03E3E;
+    font-size: 62.5%;
+}
+body {
+    background-color: var(--bg-body);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+}
+.container {
+    display: grid;
+    height: 100vh;
+    place-content: center;
+
+}
+.card {
+    background-color: var(--box-color);
+    padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+    max-width: 42.8rem;
+    margin-inline: auto;
+}
+main h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+}
+fieldset {
+    border: none;
+}
+fieldset label {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: .8rem;
+}
+fieldset + fieldset {
+    margin-top: 1.6rem;
+}
+fieldset input {
+    background-color: var(--bg-input);
+    border-radius: .4rem;
+    border: 2px solid rgba(0, 0, 0, .1); 
+    padding: 0 1.6rem;
+    height: 5.2rem;
+    width: 100%;
+}
+fieldset input:focus {
+    border: none;
+    outline: 2px solid var(--bg-btn);
+}
+.btn-form {
+    background-color: var(--bg-btn);
+    color: var(--color-btn);
+    border-radius: .4rem;
+    cursor: pointer;
+    display: block;
+    border: none;
+    font-weight: bold;
+    margin-top: 3.2rem;
+    height: 5.2rem;
+    width: 100%;
+    transition: background .4s;
+}
+.btn-form:hover {
+    background-color: #045e79;
+}
+.modal-wrapper{
+    position: absolute;
+    background-color: var(--bg-body);
+    inset: 0;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+}
+.modal-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+}
+.modal {
+    position: relative;
+}
+.modal button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+}
+.alert-error.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+.alert-error {
+    background-color: var(--bg-error);
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem 0;
+    color: var(--box-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+    transition: transform .5s;
+}
